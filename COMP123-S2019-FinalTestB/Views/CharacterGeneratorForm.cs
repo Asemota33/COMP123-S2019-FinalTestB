@@ -68,12 +68,18 @@ namespace COMP123_S2019_FinalTestB.Views
             Program.character.lastName = lastNameDataLabel.Text;
 
         }
+        /// <summary>
+        /// Load Names function
+        /// </summary>
         private void LoadNames()
         {
             firstNames = new List<string>();
             firstNames = File.ReadAllLines("../../Data/firstNames.txt").ToList();
             lastNames = File.ReadAllLines("../../Data/lastnames.txt").ToList();
         }
+        /// <summary>
+        /// Generate names function
+        /// </summary>
         private void GenerateNames()
         {
             var r = new Random();
@@ -143,10 +149,20 @@ namespace COMP123_S2019_FinalTestB.Views
                     {
                         //reading stuff to file
 
-                        //Program.product.platform = inputStream.ReadLine();
+                        Program.character.Strength = inputStream.ReadLine();
+                        Program.character.Dexterity = inputStream.ReadLine();
+                        Program.character.Constitution = inputStream.ReadLine();
+                        Program.character.Wisdom = inputStream.ReadLine();
+                        Program.character.Intelligence = inputStream.ReadLine();
+                        Program.character.Charisma = inputStream.ReadLine();
+                        Program.character.firstName = inputStream.ReadLine();
+                        Program.character.lastName = inputStream.ReadLine();
+
+
+
                         //Program.product.productID = short.Parse(inputStream.ReadLine());
                         //Program.product.cost = Convert.ToDecimal(inputStream.ReadLine());
-                        
+
 
                         //Close file
                         inputStream.Close();
@@ -163,12 +179,17 @@ namespace COMP123_S2019_FinalTestB.Views
 
             }
         }
-
+        //about menu tool strip function
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Program.aboutBox.Show();
         }
 
+       /// <summary>
+       /// Generate abilities button click function
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="e"></param>
         private void genrateAbilitiesButton_Click(object sender, EventArgs e)
         {
             var r = new Random();
@@ -191,13 +212,20 @@ namespace COMP123_S2019_FinalTestB.Views
             Program.character.Intelligence = intelligenceDataLabel.Text;
             Program.character.Wisdom = wisdomDataLabel.Text;
             Program.character.Charisma = charismaDataLabel.Text;
+           
         }
-
+        /// <summary>
+        /// Loads inventory into list
+        /// </summary>
         public void LoadInventory()
         {
             inventoryList = new List<string>();
             inventoryList = File.ReadAllLines("../../Data/inventory.txt").ToList();
         }
+
+        /// <summary>
+        /// Generates random inventory 
+        /// </summary>
         public void GenerateInventory()
         {
             var r = new Random();
@@ -218,8 +246,13 @@ namespace COMP123_S2019_FinalTestB.Views
 
 
 
-            //Program.character.Inventory = firstInventoryItem.Text;
+            //Program.character.Inventory.Add(firstInventoryItem.Text);
         }
+        /// <summary>
+        /// Generate button click function
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void generateInventoryButton_Click(object sender, EventArgs e)
         {
@@ -236,6 +269,11 @@ namespace COMP123_S2019_FinalTestB.Views
 
         }
 
+        /// <summary>
+        /// Loads info into last page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void mainTabControl_TabIndexChanged(object sender, EventArgs e)
         {
             if (mainTabControl.SelectedIndex == 3)
