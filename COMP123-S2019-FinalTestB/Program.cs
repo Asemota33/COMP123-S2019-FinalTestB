@@ -1,4 +1,5 @@
-﻿using COMP123_S2019_FinalTestB.Views;
+﻿using COMP123_S2019_FinalTestB.Objects;
+using COMP123_S2019_FinalTestB.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,8 @@ namespace COMP123_S2019_FinalTestB
     {
         //temporary
         public static CharacterGeneratorForm characterForm;
+        public static AboutBox aboutBox;
+        public static Character character;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -25,6 +28,8 @@ namespace COMP123_S2019_FinalTestB
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            character = new Character();
+            aboutBox = new AboutBox();
             characterForm = new CharacterGeneratorForm();
             Application.Run(characterForm);
         }

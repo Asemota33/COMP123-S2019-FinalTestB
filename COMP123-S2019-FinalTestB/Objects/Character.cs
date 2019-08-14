@@ -15,6 +15,11 @@ namespace COMP123_S2019_FinalTestB.Objects
 {
     public class Character
     {
+
+        //Identity
+        public string firstName { get; set; }
+        public string lastName { get; set; }
+
         // Character Abilities
         public string Strength { get; set; }
         public string Dexterity { get; set; }
@@ -32,10 +37,10 @@ namespace COMP123_S2019_FinalTestB.Objects
         public int Level { get; set; }
 
         //Equipment
-        List<Item> Inventory;
+        public List<Item> Inventory;
 
         //Constructor
-        Character()
+        public Character()
         {
             this.Inventory = new List<Item>();
         }
